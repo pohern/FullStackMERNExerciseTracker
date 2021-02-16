@@ -20,8 +20,8 @@ mongoose.connect(uri, {
 
 const db = mongoose.connection;
 
-db.on("connected", () => {
-  console.log("MongoDb database connection established successfully");
+db.once("open", () => {
+  console.log("MongoDB database connection established successfully");
 });
 
 app.listen(port, () => {
